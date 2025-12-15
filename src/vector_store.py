@@ -1,14 +1,14 @@
-from langchain_community.vectorstores import FAISS
-from langchain_openai import OpenAIEmbeddings
+from langchain_chroma import Chroma
+from langchain_community.embeddings import FakeEmbeddings
 
 def create_vectorstore(documents):
-    embeddings = OpenAIEmbeddings()
-    vectorstore = FAISS.from_documents(documents, embeddings)
+    embeddings = FakeEmbeddings(size=1536)
+    vectorstore = Chroma.from_documents(documents, embeddings, persist_directory='data/vectorstore')
     return vectorstore
 
 def load_vectorstore(path):
-    embeddings = OpenAIEmbeddings()
-    return FAISS.load_local(path, embeddings)
+    embeddings = FakeEmbeddings(size=1536)
+    return Chroma(persist_directory=path, embedding_function=embeddings)
 
 def save_vectorstore(vectorstore, path):
-    vectorstore.save_local(path)
+    pass

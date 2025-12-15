@@ -5,9 +5,9 @@ langchain-core
 langchain-text-splitters
 langchain-community
 langchain-openai
-langchain-chains
 faiss-cpu
-pypdf2
+PyPDF2
 python-docx
 tiktoken
 python-dotenv
+chromadb
