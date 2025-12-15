@@ -1,0 +1,13 @@
+streamlit
+openai
+langchain
+langchain-core
+langchain-text-splitters
+langchain-community
+langchain-openai
+langchain-chains
+faiss-cpu
+pypdf2
+python-docx
+tiktoken
+python-dotenv
